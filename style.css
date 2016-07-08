@@ -1,0 +1,12 @@
+
+.container {
+  display: block;
+  width: 960px;
+  height: 488px;
+  background-color: #cce6ff;
+  margin: 110px auto;
+  border: dotted 2px;
+}
+
+
+
