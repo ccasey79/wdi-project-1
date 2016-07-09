@@ -8,5 +8,16 @@
   border: dotted 2px;
 }
 
+#start {
+  display: block;
+  float: clear;
+}
 
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
 
