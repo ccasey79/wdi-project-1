@@ -22,11 +22,6 @@
   opacity: 1;
 }
 
-/*#start {
-  display: block;
-  float: clear;
-}*/
-
 body {
   background-image: url(images/bluedecor.jpg); no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -39,7 +34,7 @@ body {
 
 h2 {
   text-align: center;
-  margin-top: 30px; 
+  margin-top: 34px; 
   font-family: "Courier New";
   font-size: 32px;
   text-decoration: underline;
@@ -52,9 +47,9 @@ h3 {
   text-align: center;
   font-style: italic;
   font-family: "Courier New";
-  font-size: 25px;
+  font-size: 32px;
   margin-top: 7px;
-  color:  #b35c00;
+  color:  #804000;
   font-weight: bold;
   /*text-shadow: 2px 2px 4px #000;*/
   text-decoration: underline;
@@ -65,7 +60,7 @@ h3 {
 #total {
   text-align: right;
   margin-top: -60px;
-  margin-right: 158px;
+  margin-right: 148px;
   font-size: 50px;
   color: #ffa94d;
 }
@@ -91,8 +86,8 @@ button {
 }
 
 .commence {
-  margin-left: 385px;
-  margin-top: 50px;
+  margin-left: 395px;
+  margin-top: 35px;
 }
 
 p {
@@ -104,23 +99,22 @@ p {
   font-weight: bold;
 }
 
-
 #finished-game {
     position: relative;
-    top: -430px;
+    top: -451px;
     left: 219px;
     background: #737373;
     display: inline-block;
-    width: 320px;
-    height: 125px;
-    border-radius: 5px;
-    font-size: 40px;
+    width: 260px;
+    height: 68px;
+    border-radius: 8px;
+    font-size: 35px;
     font-family: "Courier New";
     font-weight: bold;
     text-align: center;
     color: #cc6600;
     text-shadow: 2px 2px 4px #000;
-    padding: 70px;
+    padding: 100px;
 }
 
 .hidden {

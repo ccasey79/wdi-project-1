@@ -1,13 +1,11 @@
 console.log('JS Loaded!');
 
 // Play game
-// (3) questions
+// (8) questions
 // click the start button to play audio clip (each clip is 10 sec approx)
 // player chooses which image of 3 for the 1 audio clip.
 // image chosen then (flips) to display correct / wrong answer (counter shows no of questions)
-// this continues until (3) questions to win, if wrong answer the player loses, game stops. 
-
-// there is a progress bar to display time left to answer
+// this continues until (8) questions to win, if wrong answer the player loses, game stops. 
 // there is potentially a level 2.
 
 var score = 0;
@@ -15,7 +13,7 @@ var userScore = document.getElementById('score');
 userScore.innerHTML = score;
 var question = 0;
 var unshuffledRounds = [{
-  images: ["images/houseTV.jpg", "images/prisonTV.jpg", "images/frasierTV.jpg"],
+  images: ["images/houseTV.jpg", "images/chicagoTV.jpg", "images/frasierTV.jpg"],
   sound: "House.mp3",
   answer: 0
 }, {
@@ -101,11 +99,11 @@ for(i = 0; i<images.length; i++) {
       question++;
     }
 
-    if (question === 2) {
+    if (question === 8) {
       revealTheScore();
     }
     else {
-      setTimeout(changeTheRound, 3000);
+      setTimeout(changeTheRound, 2000);
     }
 
   });
@@ -115,34 +113,11 @@ function revealTheScore(){
   setTimeout(function() {
     finishedGame.className = "";
     startButton.className = "";
-  }, 3000);
+  }, 1000);
 }
 
 
 
-// From correct tick - move onto the next question
-// counter to show 10 seconds (length of audio)
-// wrong answer resets to the beginning
-// After 8 questions - show 'you win!'
-
-// check image src of the clicked image against the name of the current audio
-// this.getAttribute('src') --> "images/prisonTV"
-// rounds[level].sound
-// check they match
-
-// if they match, increment score and/or round...
-
-  // if (round === 1){
-  //   images[round]
-  //   sounds[round]
-  //   round++;
-  // }
-
-  // // add audio to click start button
-  // var questionOne = new Audio("audio/" + "House" + ".mp3");   
-  //   questionOne.play(); 
-
-// });
 
 
 
