@@ -1,11 +1,12 @@
 
 .container {
   display: block;
-  width: 960px;
-  height: 488px;
+  width: 1050px;
+  height: 750px;
   background-color: #cce6ff;
-  margin: 110px auto;
-  border: dotted 2px;
+  margin: 5px auto;
+  border: dotted 1px;
+  background-image: url(images/retroTV.jpg);
 }
 
 #start {
@@ -19,5 +20,22 @@ h2 {
 
 h3 {
   text-align: center;
+}
+
+#score {
+  text-align: right;
+  margin-top: 350px;
+  margin-right: 160px;
+  font-size: 50px;
+  color: #ffffff;
+
+
+}
+
+button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #cc6600;
 }
 

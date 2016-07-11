@@ -9,6 +9,7 @@ console.log('JS Loaded!');
 
 // there is a progress bar to display time left to answer
 // there is potentially a level 2.
+
 var score = 0;
 var userScore = document.getElementById('score');
 userScore.innerHTML = score;
@@ -38,13 +39,13 @@ var rounds = [{
   sound: "Roseanne.mp3",
   answer: 0
 }, {
-  images: ["images/happyTV.jpg", "images/24TV.jpg", "images/miamiTV.jpg"],
+  images: ["images/happyTV.png", "images/24TV.jpg", "images/miamiTV.jpg"],
   sound: "Miami.mp3",
   answer: 2
 }, {
   images: ["images/dungeonsTV.jpg", "images/mashTV.jpg", "images/breakingbadTV.jpg"],
   sound: "Mash.mp3",
-  answer: 0
+  answer: 1
 }];
 
 var images = document.getElementsByTagName("img");
@@ -53,9 +54,7 @@ var audio = new Audio("audio/" + rounds[question].sound);
 document.getElementById("start").addEventListener("click", function(e){
   //alert("Start game!");
   
-
   changeTheRound();
-
   });
 
 function changeTheRound(){
@@ -66,23 +65,16 @@ function changeTheRound(){
   rounds[question].images.forEach(function(imgSrc, i) {
     images[i].setAttribute('src', imgSrc);
   });
-  
+  audio.src = "audio/" + rounds[question].sound;
   audio.play();
 }
-
-
-
-
-
 
 for(i = 0; i<images.length; i++) {
   images[i].addEventListener("click", function() {
     var answerIndex = rounds[question].answer; // 0
     var correctImageSrc = rounds[question].images[answerIndex]; // images/houseTV.jpg
 
-
     var correct = !!this.src.match(correctImageSrc);
-
 
     if(correct) {
       this.src = "images/correcttick.jpg";
@@ -96,16 +88,15 @@ for(i = 0; i<images.length; i++) {
       question++;
     }
 
-    if (question === 3) {
+    if (question === 8) {
       revealTheScore();
     }
     else {
-      setTimeout(changeTheRound, 4000);
+      setTimeout(changeTheRound, 3000);
     }
 
   });
 }
-
 
 function revealTheScore(){
   alert(score);
@@ -118,13 +109,6 @@ function revealTheScore(){
 // wrong answer resets to the beginning
 // After 8 questions - show 'you win!'
 
-
-
-
-
-
-
-
 // check image src of the clicked image against the name of the current audio
 // this.getAttribute('src') --> "images/prisonTV"
 // rounds[level].sound
@@ -132,19 +116,15 @@ function revealTheScore(){
 
 // if they match, increment score and/or round...
 
-
-  
   // if (round === 1){
   //   images[round]
   //   sounds[round]
   //   round++;
   // }
 
-
   // // add audio to click start button
   // var questionOne = new Audio("audio/" + "House" + ".mp3");   
   //   questionOne.play(); 
-
 
 // });
 
