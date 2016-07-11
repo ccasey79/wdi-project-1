@@ -54,8 +54,8 @@ var rounds = unshuffledRounds.sort(function() {
 
 var images = document.getElementsByTagName("img");
 var audio = new Audio("audio/" + rounds[question].sound);
-var winSound = new Audio("audio/" + rounds[question].sound);
-var loseSound = new Audio("audio/" + rounds[question].sound);
+var winSound = new Audio("audio/" + "match" + ".wav");
+var loseSound = new Audio("audio/" + "wrong" + ".wav");
 
 document.getElementById("start").addEventListener("click", function(e){
   //alert("Start game!");
@@ -87,11 +87,12 @@ for(i = 0; i<images.length; i++) {
       score += 10; 
       userScore.innerHTML = score;
       audio.pause();
-      // winSound.play();
+      winSound.play();
       question++;
     } else {
       this.src = "images/redcross.jpg";
       audio.pause();
+      loseSound.play();
       question++;
     }
 
@@ -110,7 +111,7 @@ function revealTheScore(){
   var container = document.getElementById("container");
   var finishedGame = document.createElement("DIV");
   finishedGame.setAttribute("id", "finished-game");
-  finishedGame.innerHTML = "The game is now over! The score was..", score;
+  finishedGame.innerHTML = "Your score is..", score;
   container.appendChild(finishedGame);
 }
 
