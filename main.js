@@ -14,7 +14,7 @@ var score = 0;
 var userScore = document.getElementById('score');
 userScore.innerHTML = score;
 var question = 0;
-var rounds = [{
+var unshuffledRounds = [{
   images: ["images/houseTV.jpg", "images/prisonTV.jpg", "images/frasierTV.jpg"],
   sound: "House.mp3",
   answer: 0
@@ -48,8 +48,14 @@ var rounds = [{
   answer: 1
 }];
 
+var rounds = unshuffledRounds.sort(function() {
+  return .5 - Math.random();
+});
+
 var images = document.getElementsByTagName("img");
 var audio = new Audio("audio/" + rounds[question].sound);
+var winSound = new Audio("audio/" + rounds[question].sound);
+var loseSound = new Audio("audio/" + rounds[question].sound);
 
 document.getElementById("start").addEventListener("click", function(e){
   //alert("Start game!");
@@ -81,6 +87,7 @@ for(i = 0; i<images.length; i++) {
       score += 10; 
       userScore.innerHTML = score;
       audio.pause();
+      // winSound.play();
       question++;
     } else {
       this.src = "images/redcross.jpg";
@@ -88,7 +95,7 @@ for(i = 0; i<images.length; i++) {
       question++;
     }
 
-    if (question === 8) {
+    if (question === 2) {
       revealTheScore();
     }
     else {
@@ -99,8 +106,12 @@ for(i = 0; i<images.length; i++) {
 }
 
 function revealTheScore(){
-  alert(score);
-
+  // alert(score);
+  var container = document.getElementById("container");
+  var finishedGame = document.createElement("DIV");
+  finishedGame.setAttribute("id", "finished-game");
+  finishedGame.innerHTML = "The game is now over! The score was..", score;
+  container.appendChild(finishedGame);
 }
 
 
