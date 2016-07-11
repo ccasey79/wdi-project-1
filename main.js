@@ -9,34 +9,117 @@ console.log('JS Loaded!');
 
 // there is a progress bar to display time left to answer
 // there is potentially a level 2.
-
-var level = 0;
+var score = 0;
+var userScore = document.getElementById('score');
+userScore.innerHTML = score;
+var question = 0;
 var rounds = [{
   images: ["images/houseTV.jpg", "images/prisonTV.jpg", "images/frasierTV.jpg"],
-  sound: "House.mp3"
+  sound: "House.mp3",
+  answer: 0
 }, {
   images: ["images/veepTV.jpg", "images/cardsTV.jpg", "images/dexterTV.jpg"],
-  sound: "Dexter.mp3"
+  sound: "Dexter.mp3",
+  answer: 2
 }, {
   images: ["images/dangermouseTV.jpg", "images/policeTV.jpg", "images/mashTV.jpg"],
-  sound: "Police.mp3"
+  sound: "Police_Squad.mp3",
+  answer: 1
+}, {
+  images: ["images/fathertedTV.jpg", "images/prisonTV.jpg", "images/thronesTV.jpg"],
+  sound: "Prison_Break.mp3",
+  answer: 1
+}, {
+  images: ["images/friendsTV.jpg", "images/miamiTV.jpg", "images/dallasTV.jpg"],
+  sound: "Dallas.mp3",
+  answer: 2
 }];
 
 var images = document.getElementsByTagName("img");
+var audio = new Audio("audio/" + rounds[question].sound);
 
 document.getElementById("start").addEventListener("click", function(e){
-  alert("Get Ready!");
+  //alert("Start game!");
+  
 
-  rounds[level].images.forEach(function(imgSrc, i) {
-    images[i].setAttribute('src', imgSrc);
+  changeTheRound();
+  // var time = 10;
+
+  // var timer = setInterval(function() {
+  //   time--;
+  //   console.log(time);
+  //   if(time === 0) {
+  //     clearInterval(timer);
+  //   }
+  // }, 10000);
   });
 
-  var audio = new Audio("audio/" + rounds[level].sound);
+function changeTheRound(){
+  console.log(rounds[question].sound);
+  // if (question > 0){
+  //   audio.pause();
+  // }
+  rounds[question].images.forEach(function(imgSrc, i) {
+    images[i].setAttribute('src', imgSrc);
+  });
+  
   audio.play();
+}
 
-});
 
-// add event listeners to all images (using a loop)
+
+
+
+
+for(i = 0; i<images.length; i++) {
+  images[i].addEventListener("click", function() {
+    var answerIndex = rounds[question].answer; // 0
+    var correctImageSrc = rounds[question].images[answerIndex]; // images/houseTV.jpg
+
+
+    var correct = !!this.src.match(correctImageSrc);
+
+
+    if(correct) {
+      this.src = "images/correcttick.jpg";
+      score += 10; 
+      userScore.innerHTML = score;
+      audio.pause();
+      question++;
+    } else {
+      this.src = "images/redcross.jpg";
+      audio.pause();
+      question++;
+    }
+
+    if (question === 3) {
+      revealTheScore();
+    }
+    else {
+      setTimeout(changeTheRound, 4000);
+    }
+
+  });
+}
+
+
+function revealTheScore(){
+  alert(score);
+  
+}
+
+
+// From correct tick - move onto the next question
+// counter to show 10 seconds (length of audio)
+// wrong answer resets to the beginning
+// After 8 questions - show 'you win!'
+
+
+
+
+
+
+
 
 // check image src of the clicked image against the name of the current audio
 // this.getAttribute('src') --> "images/prisonTV"
@@ -44,21 +127,6 @@ document.getElementById("start").addEventListener("click", function(e){
 // check they match
 
 // if they match, increment score and/or round...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   
@@ -75,6 +143,13 @@ document.getElementById("start").addEventListener("click", function(e){
 
 
 // });
+
+
+
+
+
+
+
 
 
 
