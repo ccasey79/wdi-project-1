@@ -22,7 +22,7 @@ var rounds = [{
   sound: "Dexter.mp3",
   answer: 2
 }, {
-  images: ["images/dangermouseTV.jpg", "images/policeTV.jpg", "images/mashTV.jpg"],
+  images: ["images/dangermouseTV.jpg", "images/policeTV.jpg", "images/he_manTV.jpg"],
   sound: "Police_Squad.mp3",
   answer: 1
 }, {
@@ -30,9 +30,21 @@ var rounds = [{
   sound: "Prison_Break.mp3",
   answer: 1
 }, {
-  images: ["images/friendsTV.jpg", "images/miamiTV.jpg", "images/dallasTV.jpg"],
+  images: ["images/friendsTV.jpg", "images/dynastyTV.jpg", "images/dallasTV.jpg"],
   sound: "Dallas.mp3",
   answer: 2
+}, {
+  images: ["images/roseanneTV.jpg", "images/wonderTV.jpg", "images/cheersTV.jpg"],
+  sound: "Roseanne.mp3",
+  answer: 0
+}, {
+  images: ["images/happyTV.jpg", "images/24TV.jpg", "images/miamiTV.jpg"],
+  sound: "Miami.mp3",
+  answer: 2
+}, {
+  images: ["images/dungeonsTV.jpg", "images/mashTV.jpg", "images/breakingbadTV.jpg"],
+  sound: "Mash.mp3",
+  answer: 0
 }];
 
 var images = document.getElementsByTagName("img");
@@ -43,15 +55,7 @@ document.getElementById("start").addEventListener("click", function(e){
   
 
   changeTheRound();
-  // var time = 10;
 
-  // var timer = setInterval(function() {
-  //   time--;
-  //   console.log(time);
-  //   if(time === 0) {
-  //     clearInterval(timer);
-  //   }
-  // }, 10000);
   });
 
 function changeTheRound(){
@@ -105,7 +109,7 @@ for(i = 0; i<images.length; i++) {
 
 function revealTheScore(){
   alert(score);
-  
+
 }
 
 
