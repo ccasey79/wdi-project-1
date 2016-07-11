@@ -87,12 +87,12 @@ button {
 
 .choices {
   margin-left: 220px;
-  margin-top: 120px;
+  margin-top: 140px;
 }
 
 .commence {
   margin-left: 385px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 p {
@@ -107,7 +107,7 @@ p {
 
 #finished-game {
     position: relative;
-    top: -445px;
+    top: -430px;
     left: 219px;
     background: #737373;
     display: inline-block;

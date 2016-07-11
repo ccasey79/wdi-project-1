@@ -56,14 +56,19 @@ var images = document.getElementsByTagName("img");
 var audio = new Audio("audio/" + rounds[question].sound);
 var winSound = new Audio("audio/" + "match" + ".wav");
 var loseSound = new Audio("audio/" + "wrong" + ".wav");
+var startButton = document.getElementById("start");
+var finishedGame = document.getElementById("finished-game");
 
-document.getElementById("start").addEventListener("click", function(e){
-  //alert("Start game!");
-  
+startButton.addEventListener("click", function(e){
+  this.className = "hidden";
+  question = 0;
+  score = 0;
+  userScore.innerHTML = score;
   changeTheRound();
-  });
+});
 
 function changeTheRound(){
+  finishedGame.className = "hidden";
   console.log(rounds[question].sound);
   // if (question > 0){
   //   audio.pause();
@@ -107,13 +112,12 @@ for(i = 0; i<images.length; i++) {
 }
 
 function revealTheScore(){
-  // alert(score);
-  var container = document.getElementById("container");
-  var finishedGame = document.createElement("DIV");
-  finishedGame.setAttribute("id", "finished-game");
-  finishedGame.innerHTML = "Your score is..", score;
-  container.appendChild(finishedGame);
+  setTimeout(function() {
+    finishedGame.className = "";
+    startButton.className = "";
+  }, 3000);
 }
+
 
 
 // From correct tick - move onto the next question
