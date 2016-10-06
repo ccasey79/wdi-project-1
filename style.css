@@ -9,7 +9,6 @@
   background-image: url(images/yellowretrotv.gif);
   background-repeat: no-repeat; 
   background-size: cover;  
-  
 }
 
 #container img {
@@ -20,6 +19,9 @@
 
 #container img[src] {
   opacity: 1;
+  padding: 5px;
+  border-radius: 30px;
+  box-shadow: 8px 8px;
 }
 
 body {
@@ -28,30 +30,30 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-blend-mode: color-dodge;
+  background-blend-mode: color-dodge
   
 }
 
 h2 {
   text-align: center;
   margin-top: 34px; 
-  font-family: "Courier New";
+  font-family: 'Libre Baskerville', serif;
   font-size: 32px;
   text-decoration: underline;
   color: #b35900 ;
   font-weight: bold;
-  /*text-shadow: 2px 2px 4px #000;*/
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.29);
   }
 
 h3 {
   text-align: center;
   font-style: italic;
-  font-family: "Courier New";
+  font-family: 'Libre Baskerville', serif;
   font-size: 32px;
   margin-top: 7px;
   color:  #804000;
   font-weight: bold;
-  /*text-shadow: 2px 2px 4px #000;*/
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.29);
   text-decoration: underline;
 
 }
@@ -59,14 +61,14 @@ h3 {
 #score,
 #total {
   text-align: right;
-  margin-top: -60px;
-  margin-right: 148px;
+  margin-top: -55px;
+  margin-right: 159px;
   font-size: 50px;
   color: #ffa94d;
 }
 
 #total {
-  margin-right: 100px;
+  margin-right: 108px;
 
 }
 
@@ -75,7 +77,7 @@ button {
   border-radius: 8px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-color: #cc6600;
-  font-family: "Courier New";
+  font-family: 'Libre Baskerville', serif;
   font-weight: bold;
 
 }
@@ -83,6 +85,7 @@ button {
 .choices {
   margin-left: 220px;
   margin-top: 140px;
+  border-radius: 5px;
 }
 
 .commence {
@@ -101,15 +104,15 @@ p {
 
 #finished-game {
     position: relative;
-    top: -451px;
-    left: 219px;
-    background: #737373;
+    top: -471px;
+    left: 225px;
+    background: black;
     display: inline-block;
-    width: 260px;
-    height: 68px;
+    width: 291px;
+    height: 74px;
     border-radius: 8px;
     font-size: 35px;
-    font-family: "Courier New";
+    font-family: 'Bungee Shade', cursive;
     font-weight: bold;
     text-align: center;
     color: #cc6600;
@@ -120,7 +123,6 @@ p {
 .hidden {
   display: none!important;
 }
-
 
 
 
