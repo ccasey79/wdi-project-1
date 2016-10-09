@@ -49,6 +49,9 @@ Brief timeline build of game
 
 - Finally checks were made for correct audio files being played, correct audio durations, questions rotating when answered. Game was then deployed on Heroku.
 
+Screenshot of the game:
+------------------------
+
 ![tv_trivia_tunes](https://cloud.githubusercontent.com/assets/17442168/19125287/6cc3a308-8b2e-11e6-8c23-e859984a08f2.png)
 
 Overall views
