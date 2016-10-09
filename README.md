@@ -54,15 +54,13 @@ Brief timeline build of game
 Overall views
 --------------
 
-- I think the game works well as a TV trivia game. If I was to add to this game my intensions were to create a level two. My idea is to guess the correct film from the three multiple choices according to a famous quote from a tv show. Again the player would have approximately eight seconds to answer the question.
+- I think the game works well as a trivia game, tests players knowledge of TV. My intensions for a level 2 in the game would be to guess the correct TV show from the three multiple choices according to a famous quote. Again the player would have approximately eight seconds to answer the question. 
 
-- You could add a number of levels to this game as long as it involves using audio files from tv shows. I think as levels get added the level of difficulty would increase.
+- Potentially for this trivia game you could add a number of levels as long as it involves using audio files from tv shows. The levels would become more difficult as the player continues in the game. 
 
-- Using the amount of data - audio & image files
+- This kind of game certainly gave a good indication into how much data needs to be collected. Research into finding the images and audio files, then editing the image sizes and editing the audio lengths. If the game had more levels it certainly gave a good indication and consideration into the amount of data these types of games require. 
 
-- Gives a good indication of how a trivia game works on a basic structure.
-
-- First time where I had implemented JavaScript on a project
+- I think this game gives a good basic structure of how a trivia game works and it's logic. This was my first project where I had thoroughly used JavaScript and it was a good learning exercise in terms of my understanding and what the language can do. 
 
 Technology used
 -----------------
