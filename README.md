@@ -68,3 +68,5 @@ Technology used
 - HTML 
 - CSS 
 - JavaScript
+- Heroku
+
